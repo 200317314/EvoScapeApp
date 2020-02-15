@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">EvoScape</string>
+    <string name="login">Login</string>
+    <string name="facebook">Facebook</string>
+    <string name="emailandpass">Email and Password</string>
+    <string name="services">Services</string>
+    <string name="loading">Loading...</string>
 </resources>

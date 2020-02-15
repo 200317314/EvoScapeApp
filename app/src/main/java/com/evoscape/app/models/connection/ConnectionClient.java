@@ -1,7 +1,9 @@
 package com.evoscape.app.models.connection;
 
 import android.app.Activity;
+import android.content.Intent;
 
+import com.evoscape.app.activities.MainActivity;
 import com.evoscape.app.utils.Utils;
 
 import org.java_websocket.WebSocket;
@@ -27,7 +29,7 @@ public class ConnectionClient {
     private static Activity currentActivity;
 
     public static void newClient() throws URISyntaxException {
-        client = new WebSocketClient(new URI("ws://realmlands.com:42069")) {
+        client = new WebSocketClient(new URI("ws://realmlands.com:7804")) { //change to 42069
             @Override
             public void onOpen(ServerHandshake handshakedata) {
 
@@ -57,6 +59,9 @@ public class ConnectionClient {
                         } catch (BadPaddingException | IllegalBlockSizeException | InvalidKeyException | NoSuchPaddingException | NoSuchAlgorithmException e) {
                             e.printStackTrace();
                         }
+
+                        ConnectionClient.getCurrentActivity().finish();
+                        ConnectionClient.getCurrentActivity().startActivity(new Intent(ConnectionClient.getCurrentActivity().getBaseContext(), MainActivity.class));
                     }
                 } else {
                     Message message = null;

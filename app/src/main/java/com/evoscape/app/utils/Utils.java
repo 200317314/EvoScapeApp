@@ -28,16 +28,6 @@ public class Utils {
     private static final Gson gson = new GsonBuilder().setDateFormat("MMM d, yyyy, HH:mm:ss a").create();
     private static final SecureRandom random = new SecureRandom();
 
-    public static void hideSystemUI(Window window) {
-        window.getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-    }
-
     public static SecureRandom getRandom() {
         return random;
     }
@@ -62,7 +52,7 @@ public class Utils {
     }
 
     public static byte[] encryptRSA(String data, PublicKey publicKey) throws BadPaddingException, IllegalBlockSizeException, InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException {
-        Cipher cipher = Cipher.getInstance("RSA/CBC/PKCS1Padding");
+        Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
         cipher.init(Cipher.ENCRYPT_MODE, publicKey);
         return cipher.doFinal(data.getBytes());
     }
@@ -70,7 +60,7 @@ public class Utils {
     public static String decryptAES(byte[] data, SecretKey secretKey) {
         Cipher cipher = null;
         try {
-            cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+            cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             return new String(cipher.doFinal(data));
         } catch (NoSuchAlgorithmException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException | InvalidKeyException e) {
@@ -88,7 +78,7 @@ public class Utils {
     public static byte[] encryptAES(String data, SecretKey secretKey) {
         Cipher cipher = null;
         try {
-            cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+            cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             return cipher.doFinal(data.getBytes());
         } catch (NoSuchAlgorithmException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException | InvalidKeyException e) {
