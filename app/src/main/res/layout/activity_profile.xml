@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".activities.ProfileActivity">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/civProfilePicture"
+        android:layout_width="158dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/profile_placeholder"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="4dp"
+        app:civ_shadow="false"
+        app:civ_shadow_color="@android:color/black"
+        app:civ_shadow_radius="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="John Doe"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/civProfilePicture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="email@email.com"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/civProfilePicture"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="+1 (111) 111-1111"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/civProfilePicture"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProfileOptions"
+        android:layout_width="0dp"
+        android:layout_height="398dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/civProfilePicture" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

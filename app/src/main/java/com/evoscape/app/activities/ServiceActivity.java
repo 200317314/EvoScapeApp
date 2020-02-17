@@ -33,7 +33,7 @@ public class ServiceActivity extends AppCompatActivity {
         }};
 
         recyclerViewServices = findViewById(R.id.rvServices);
-        recyclerViewServices.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerViewServices.setLayoutManager(new GridLayoutManager(this, 1));
         ServiceAdapter adapter = new ServiceAdapter(this, services);
         recyclerViewServices.setAdapter(adapter);
     }
