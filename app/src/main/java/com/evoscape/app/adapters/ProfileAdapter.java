@@ -1,6 +1,7 @@
 package com.evoscape.app.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.evoscape.app.R;
 import com.evoscape.app.models.profile.Option;
+import com.evoscape.app.models.profile.Profile;
 
 import java.util.ArrayList;
 
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHolder> {
     private ArrayList<Option> options;
     private Context ctx;
+    private Profile profile;
 
-    public ProfileAdapter(Context ctx, ArrayList<Option> options) {
+    public ProfileAdapter(Context ctx, ArrayList<Option> options, Profile profile) {
         this.options = options;
         this.ctx = ctx;
+        this.profile = profile;
     }
 
     @NonNull
@@ -42,7 +46,9 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(options.get(position).getName() + " clicked");
+                Intent i = new Intent(ctx, options.get(position).getStartActivityClass()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtra("profile", profile);
+                ctx.startActivity(i);
             }
         });
     }
