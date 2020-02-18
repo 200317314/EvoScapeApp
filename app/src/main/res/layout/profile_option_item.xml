@@ -5,14 +5,14 @@
     android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:orientation="vertical"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:paddingTop="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
 
         <ImageView
             android:id="@+id/imageViewOption"
@@ -26,6 +26,7 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_light"
             android:gravity="center_vertical"
             android:text="TextView"
             android:textColor="@android:color/black"
@@ -38,4 +39,11 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_go" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        app:srcCompat="@android:color/black" />
 </LinearLayout>

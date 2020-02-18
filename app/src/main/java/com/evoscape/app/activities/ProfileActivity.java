@@ -46,11 +46,11 @@ public class ProfileActivity extends AppCompatActivity {
     private void initRecyclerView() {
         ArrayList<Option> options = new ArrayList<Option>(){{
             add(new Option("1", "Edit Account", "ic_edit_account", EditAccountActivity.class));
-            add(new Option("2", "Change Password", "ic_change_pass", ProfileActivity.class));
-            add(new Option("3", "Notification Settings", "ic_notif_settings", ProfileActivity.class));
-            add(new Option("4", "Saved Addresses", "ic_saved_addresses", ProfileActivity.class));
-            add(new Option("5", "Saved Cards", "ic_saved_cards", ProfileActivity.class));
-            add(new Option("6", "Logout", "ic_logout", ProfileActivity.class));
+            add(new Option("2", "Change Password", "ic_change_pass", ChangePasswordActivity.class));
+            add(new Option("3", "Notification Settings", "ic_notif_settings", NotificationSettingsActivity.class));
+            add(new Option("4", "Saved Addresses", "ic_saved_addresses", SavedAddressesActivity.class));
+            add(new Option("5", "Gift Cards", "ic_saved_cards", EditAccountActivity.class));
+            add(new Option("6", "Logout", "ic_logout", EditAccountActivity.class));
         }};
 
         rvProfileOptions = findViewById(R.id.rvProfileOptions);
