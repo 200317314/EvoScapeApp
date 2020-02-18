@@ -16,4 +16,5 @@
     <string name="news">News and Updates</string>
     <string name="home_address">Home Address</string>
     <string name="saved_addresses">Saved Addresses</string>
+    <string name="settings">Settings</string>
 </resources>

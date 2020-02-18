@@ -1,18 +1,18 @@
 package com.evoscape.app.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.evoscape.app.R;
 import com.evoscape.app.adapters.ProfileAdapter;
 import com.evoscape.app.models.profile.Option;
 import com.evoscape.app.models.profile.Profile;
-import com.evoscape.app.models.service.Service;
 
 import java.util.ArrayList;
 

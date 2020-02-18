@@ -33,7 +33,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
-        viewHolder.imageViewService.setImageResource(R.drawable.placeholder);
+        viewHolder.imageViewService.setImageResource(R.drawable.service_placeholder);
         viewHolder.serviceTitle.setText(services.get(position).getName());
     }
 
